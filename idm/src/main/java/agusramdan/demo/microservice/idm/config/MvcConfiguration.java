@@ -14,8 +14,9 @@ public class MvcConfiguration implements WebMvcConfigurer {
         return new LayoutDialect();
     }
 
-    public void addViewControllers(ViewControllerRegistry viewControllerRegistry) {
-        viewControllerRegistry.addViewController("/").setViewName("redirect:/index.html");
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/login").setViewName("login");
     }
 
 }
