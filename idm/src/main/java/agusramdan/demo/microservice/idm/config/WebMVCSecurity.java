@@ -33,7 +33,8 @@ public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
                 "/resources/**","/css/**","/img/**","/js/**","/vendor/**"
-                ,"/bootstrap/**", "/dist/**", "/plugins/**");
+                ,"/bootstrap/**", "/dist/**", "/plugins/**"
+                ,"/forgot-password.html","/register.html");
     }
 
     @Override
@@ -46,7 +47,7 @@ public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .failureUrl("/login?error")
                 .loginPage("/login")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/index")
                 .permitAll()
                 .and()
                 .logout()
